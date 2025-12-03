@@ -1,0 +1,170 @@
+@import '../common.css';
+
+@layer components {
+    :root {
+        --hyperlink: oklch(0.46 0.21 277);
+        --hyperlink-active: oklch(0.32 0.21 277);
+        --highlight: oklch(0.56 0.15 49);
+    }
+    .dark {
+        --hyperlink: oklch(0.79 0.10 275);
+        --hyperlink-active: oklch(0.86 0.10 275);
+        --highlight: oklch(0.95 0.09 96);
+    }
+
+    @theme {
+        --color-hyperlink: var(--hyperlink);
+        --color-hyperlink-active: var(--hyperlink-active);
+        --color-highlight: var(--highlight);
+    }
+
+    [data-slot="markdown-content"] {
+        & {
+            max-width: 84ch;
+        }
+        * {
+            @apply text-left;
+        }
+        h1 {
+            @apply text-center scroll-m-20 mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight md:hover:[&>a]:hidden;
+        }
+        h2 {
+            @apply scroll-m-16 mt-4 border-b-2 py-2 text-[1.35rem] sm:text-2xl md:text-3xl font-bold tracking-tight transition-colors first:mt-0;
+        }
+        h3 {
+            @apply scroll-m-30 mt-3 text-[1.1rem] sm:text-lg font-semibold tracking-tight first:mt-0;
+        }
+        h4 {
+            @apply scroll-m-14 mt-3 text-lg font-semibold tracking-tight first:mt-0;
+        }
+        h5,h6 {
+            @apply scroll-m-12 mt-3 text-lg font-medium tracking-tight first:mt-0;
+        }
+
+        a {
+            @apply text-hyperlink hover:text-hyperlink-active !text-wrap !wrap-anywhere focus-visible:outline-none focus-visible:ring-2 focus-visible:rounded-xs focus-visible:ring-offset-transparent focus-visible:ring-ring !break-all;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+
+            &:hover, &.active, &:focus-visible {
+                @apply underline underline-offset-3;
+            }
+
+            /* For animated underline, though won't work nicely if text is long */
+            /* @apply relative inline-block;
+            &:after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: currentColor;
+                transform-origin: bottom right;
+                transition: transform 0.2s ease-out;
+                box-decoration-break: clone;
+                -webkit-box-decoration-break: clone;
+            }
+            &:hover:after,
+            &.active:after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+            } */
+        }
+
+        p {
+            @apply leading-6 [&:not(:first-child)]:mt-4;
+        }
+        blockquote {
+            @apply mt-6 border-l-2 pl-6 italic;
+        }
+        table {
+            @apply w-full;
+
+            thead {
+                tr {
+                    @apply even:bg-muted m-0 border-t p-0;
+
+                    th {
+                        @apply border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right;
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    @apply even:bg-muted m-0 border-t p-0;
+                }
+                td {
+                    @apply border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right;
+                }
+            }
+        }
+        ul {
+            @apply my-3 ml-6 list-disc;
+            li {
+                @apply mt-2 pl-2;
+            }
+        }
+        ol {
+            @apply my-3 ml-6 list-decimal;
+            li {
+                @apply mt-2 pl-2;
+            }
+        }
+        code {
+            @apply bg-muted relative rounded px-[0.34rem] py-[0.15rem] font-mono text-sm font-medium text-[1.01em];
+        }
+
+        .center {
+            & * {
+                @apply mx-auto text-center;
+            }
+        }
+
+
+        [data-slot="section-entry"] {
+            @apply relative isolate mt-2 md:mt-4;
+            [data-slot="section-entry-title"] {
+                @apply !sticky h-fit top-12 sm:top-12.5 bg-background/99 pt-1.5 z-10;
+            }
+            [data-slot="section-entry-heading"] {
+                @apply !sticky h-fit top-[calc((var(--spacing)*25.875))] sm:top-[calc((var(--spacing)*26.25))] md:top-[calc((var(--spacing)*27.1))] bg-background/98 pt-2 pb-2 border-b z-[9] mt-0;
+                h2, h3 {
+                    @apply leading-5 md:leading-7 w-fit;
+                }
+                p {
+                    @apply leading-4;
+                }
+            }
+            [data-slot="section-entry-content"] {
+                h3 {
+                    @apply mt-6 first:mt-3;
+                }
+                p {
+                    @apply mt-1.5 md:mt-3;
+                }
+            }
+        }
+
+
+        [data-slot="publications-list"] {
+            ol {
+                @apply ml-11 mt-4 mb-2;
+                li {
+                    @apply mt-0;
+                }
+            }
+        }
+
+        .paper-title {
+            @apply !inline !text-wrap !wrap-anywhere text-highlight;
+            &:before {
+                display: none;
+            }
+            &:after {
+                display: none;
+            }
+        }
+    }
+}

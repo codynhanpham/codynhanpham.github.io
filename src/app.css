@@ -1,0 +1,254 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import './themes/default.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@font-face {
+	font-family: 'Noto Sans';
+	src:
+		local('Noto Sans'), url('/assets/fonts/NotoSans-VariableFont_wdth,wght.ttf'),
+		format('truetype'), url('/assets/fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf'),
+		format('truetype');
+	font-weight: 100 900;
+}
+
+@font-face {
+	font-family: 'Cherish Regular';
+	src:
+		local('Cherish'), local('Cherish Regular'), url('/assets/fonts/Cherish-Regular.ttf'),
+		format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+
+
+@font-face {
+	font-family: 'Juergen-Manuscript';
+	src:
+		local('Juergen-Manuscript'), url('/assets/fonts/Juergen-Manuscript-Medium.ttf'),
+		format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Juergen-Stylo';
+	src:
+		local('Juergen-Manuscript'), url('/assets/fonts/Juergen-Stylo-Medium.ttf'), format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+@theme inline {
+	--radius-sm: calc(var(--radius) - 4px);
+	--radius-md: calc(var(--radius) - 2px);
+	--radius-lg: var(--radius);
+	--radius-xl: calc(var(--radius) + 4px);
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-card: var(--card);
+	--color-card-foreground: var(--card-foreground);
+	--color-popover: var(--popover);
+	--color-popover-foreground: var(--popover-foreground);
+	--color-primary: var(--primary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-secondary: var(--secondary);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-accent: var(--accent);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-destructive: var(--destructive);
+	--color-border: var(--border);
+	--color-input: var(--input);
+	--color-ring: var(--ring);
+	--color-chart-1: var(--chart-1);
+	--color-chart-2: var(--chart-2);
+	--color-chart-3: var(--chart-3);
+	--color-chart-4: var(--chart-4);
+	--color-chart-5: var(--chart-5);
+	--color-sidebar: var(--sidebar);
+	--color-sidebar-foreground: var(--sidebar-foreground);
+	--color-sidebar-primary: var(--sidebar-primary);
+	--color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+	--color-sidebar-accent: var(--sidebar-accent);
+	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+	--color-sidebar-border: var(--sidebar-border);
+	--color-sidebar-ring: var(--sidebar-ring);
+}
+
+@theme {
+	--animate-wiggle: wiggle 1s ease-in-out infinite;
+	--animate-wiggle-once: wiggle 0.2s ease-in-out 1;
+	
+	@keyframes wiggle {
+		0%,
+		100% {
+			transform: rotate(-3deg);
+		}
+		50% {
+			transform: rotate(3deg);
+		}
+	}
+}
+
+@layer base {
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		@apply border-border outline-ring/50 text-[16px] sm:text-[18px] lg:text-[20px];
+	}
+	html {
+        height: 100%;
+	}
+	body {
+		min-height: 100%;
+		
+		display: flex;
+		flex-direction: column;
+	}
+	body {
+		@apply bg-background text-foreground;
+	}
+
+	/* https://www.reddit.com/r/webdev/comments/1ihv7iz/removing_the_stupid_space_above_and_below_text/ */
+	/* Add a pseudo ::before element to remove the top space */
+	span::before {
+		content: '';
+		display: table;
+		margin-bottom: -0.38em !important;
+	}
+	/* Add a pseudo ::after element to remove the bottom space */
+	span::after {
+		content: '';
+		display: table;
+		margin-top: -0.30em !important;
+	}
+	.ignorespanclip::before {
+		content: '';
+		display: table;
+		margin-bottom: 0px !important;
+	}
+	/* Add a pseudo ::after element to remove the bottom space */
+	.ignorespanclip::after {
+		content: '';
+		display: table;
+		margin-top: 0px !important;
+	}
+
+
+	.cherish-regular {
+		font-family: 'Cherish', 'Cherish Regular', cursive;
+		font-weight: 100;
+		font-style: normal;
+	}
+	.cherish-logo {
+		font-family: 'Cherish', 'Cherish Regular', cursive;
+		font-weight: 400;
+		font-style: normal;
+		font-size: 2rem;
+		padding: 0rem;
+		margin: 0rem;
+	}
+
+	.yurgenschmidt-manuscript {
+		font-family: 'Juergen-Manuscript';
+		font-weight: normal;
+		font-style: normal;
+		font-size: 0.9rem;
+		text-transform: lowercase !important;
+	}
+	span.yurgenschmidt-manuscript::before {
+		content: '';
+		display: table;
+		margin-bottom: 0px !important;
+	}
+	/* Add a pseudo ::after element to remove the bottom space */
+	span.yurgenschmidt-manuscript::after {
+		content: '';
+		display: table;
+		margin-top: -0.2rem !important;
+	}
+
+	.link-underline {
+		color: currentColor;
+		text-decoration: none;
+		display: inline-block;
+		position: relative;
+		overflow-wrap: anywhere;
+	}
+
+	/* underline animation left to right */
+	.link-underline:after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		transform: scaleX(0);
+		height: 2px;
+		bottom: 0;
+		left: 0;
+		background-color: currentColor;
+		transform-origin: bottom right;
+		transition: transform 0.25s ease-out;
+	}
+
+	.link-underline:hover:after,
+	.link-underline.active:after,
+	.group:hover .link-underline:after {
+		transform: scaleX(1);
+		transform-origin: bottom left;
+	}
+
+
+	/* Main + Default scrollbar styling */
+	::-webkit-scrollbar {
+		width: 0.5rem;
+		height: 0.5rem;
+		border-radius: 100vh;
+		@apply bg-sidebar;
+	}
+
+	::-webkit-scrollbar-track {
+		border-radius: 100vh;
+		@apply bg-sidebar;
+	}
+
+	::-webkit-scrollbar-thumb {
+		border-radius: 100vh;
+		@apply bg-muted-foreground/60 border-2 border-muted;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		border-radius: 100vh;
+		@apply bg-foreground/60;
+	}
+
+	/* Thin scrollbar */
+	.thin-scrollbar::-webkit-scrollbar {
+		width: 0.3rem;
+		height: 0.3rem;
+		border-radius: 100vh;
+		@apply bg-sidebar
+	}
+
+	.thin-scrollbar::-webkit-scrollbar-track {
+		border-radius: 100vh;
+		@apply bg-sidebar
+	}
+
+	.thin-scrollbar::-webkit-scrollbar-thumb {
+		border-radius: 100vh;
+		@apply bg-muted-foreground/60 border-2 border-muted;
+	}
+
+	.thin-scrollbar::-webkit-scrollbar-thumb:hover {
+		border-radius: 100vh;
+		@apply bg-foreground/60;
+	}
+}

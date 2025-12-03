@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="%paraglide.lang%" data-theme="default">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/assets/logo/variants/logo-0.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link href="/assets/fonts/Cherish-Regular.ttf" rel="prefetch" type="font/ttf" />
+		<meta name="theme-color" content="#ffffff" />
+		<meta name="theme-color" content="#0c0a09" media="(prefers-color-scheme: dark)" />
+
+		<!-- FONTS -->
+		<link
+			rel="preload"
+			href="%sveltekit.assets%/assets/fonts/Cherish-Regular.ttf"
+			as="font"
+			type="font/ttf"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="preload"
+			href="%sveltekit.assets%/assets/fonts/NotoSans-VariableFont_wdth,wght.ttf"
+			as="font"
+			type="font/ttf"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="preload"
+			href="%sveltekit.assets%/assets/fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf"
+			as="font"
+			type="font/ttf"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="preload"
+			href="%sveltekit.assets%/assets/fonts/Juergen-Stylo-Medium.ttf"
+			as="font"
+			type="font/ttf"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="preload"
+			href="%sveltekit.assets%/assets/fonts/Juergen-Manuscript-Medium.ttf"
+			as="font"
+			type="font/ttf"
+			crossorigin="anonymous"
+		/>
+
+		<!-- APPLE THINGS -->
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover" class="bg-sidebar">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>

@@ -1,0 +1,193 @@
+---
+layout: "resume"
+createdAt: 2025-07-08T21:25-05:00
+updatedAt: 2022-12-25T00:00-05:00
+
+title: "Resume"
+description: "My professional resume"
+---
+
+<script lang="ts">
+    import * as SectionEntry from './section-entry/index.js';
+</script>
+
+# CODY NHAN PHAM
+
+<div class="center my-2 md:hidden [&_p]:mt-0">
+
+St. Louis, Missouri
+
+contact@codynhanpham.com
+
+</div>
+
+<div class="center hidden md:block my-4 [&_p]:mt-0.5">
+
+St. Louis, Missouri | contact@codynhanpham.com
+
+</div>
+
+
+<!-- ///////// EDUCATION ///////// -->
+
+<SectionEntry.Root>
+<SectionEntry.Title>
+
+## EDUCATION
+
+</SectionEntry.Title>
+
+<SectionEntry.Entry>
+<SectionEntry.EntryHeading fromYYYYMM="201908" toYYYYMM="202305" footnote="Missouri State University – Springfield, MO">
+
+### B.S., Microbiology and Biotechnology
+
+</SectionEntry.EntryHeading>
+<SectionEntry.EntryContent>
+
+- GPA `3.86/4.00`, graduated Magna Cum Laude
+- International Leadership Scholarship ($10,000/yr, 2019-2023)
+- Dean’s List for 8 consecutive semesters
+- Ranked in the top 98th percentile in the ETS Biology Major Field Test
+
+</SectionEntry.EntryContent>
+</SectionEntry.Entry>
+</SectionEntry.Root>
+
+
+
+<!-- ///////// PROFESSIONAL ///////// -->
+
+<SectionEntry.Root>
+<SectionEntry.Title>
+
+## PROFESSIONAL EXPERIENCE
+
+</SectionEntry.Title>
+
+<SectionEntry.Entry>
+<SectionEntry.EntryHeading fromYYYYMM="202311" toYYYYMM="present" footnote="Washington University in St. Louis – St. Louis, MO">
+
+### Neuroscience Research Technician
+
+</SectionEntry.EntryHeading>
+<SectionEntry.EntryContent>
+
+- Performed 12+ **spatial transcriptomics** MERFISH runs on delicate developing mouse brains, managing the full workflow from animal husbandry to cryo-preservation, sample treatment, and imaging, advancing the knowledge on the lateralization of **auditory processing**.
+- Created a semi-**automated** data processing pipeline in Python and Rust to **streamline the analysis and archival** of multiple 6TB-per-sample MERFISH datasets, integrating open-sourced technologies for cell boundary segmentation, cell type identification, differential gene expression analysis, and molecular/biological gene ontology enrichment.
+- Designed and developed the lab’s official **website** ([oviedolab.org](https://oviedolab.org)) using Svelte and TailwindCSS, maintaining **fast performance** and high SEO ranking, averaging 1100 organic search impressions with an 8.5% click-through rate per month.
+- **Reduced research costs** by building computers in-house, upgrading and maintaining 15+ year old lab equipment and software, ensuring functionality and compatibility with modern computing hardware.
+- Analyzed **behavioral assays** and performed *in vivo* **2-photon calcium imaging** and post-mortem **histology** on 4+ transgenic mouse models on the autism spectrum, unveiling pathways where auditory processing and social communication diverge from wildtypes.
+- Programmed and maintained a set of on-line data analysis suites with user-friendly **graphical interfaces** in MATLAB, providing near **real-time feedback** aids during *in vitro* (slice **patching**, laser-scanning photo-stimulation) and *in vivo* (multi-channel silicon probe **electrophysiology**, 2-photon calcium imaging) experiments.
+
+</SectionEntry.EntryContent>
+</SectionEntry.Entry>
+
+
+<SectionEntry.Entry>
+<SectionEntry.EntryHeading fromYYYYMM="202104" toYYYYMM="202305" footnote="Missouri State University – Springfield, MO">
+
+### Research Assistant
+
+</SectionEntry.EntryHeading>
+<SectionEntry.EntryContent>
+
+- Investigated toxicological effects of engineered Ag and Zn **nanomaterials** on *A. thaliana* and *B. napus* to reveal potential **environmental impacts** and inform nanomaterial **safety regulations**.
+- Conducted total RNA extraction, RNA-seq analysis, and qPCR validation for **differential gene expression** using the Bioinformatics software CLC Genomics Workbench, identifying 380+ differentially expressed genes.
+- Performed 3 independent Inductively Coupled Plasma **Mass Spectrometry** (*ICP-MS*) analyses over 4 months to accurately determine the amount of metal uptake by plants, providing data for understanding **metal toxicity** in plants and their potential for phytoremediation.
+- Developed **general-purpose automation** scripts that accelerated the data-entry procedure by over 8 times, significantly reducing **data processing** time and labor costs.
+- Extracted and quantified the plant’s total chlorophyll concentration with **spectrophotometry**, ran **statistical analysis** and graphing using R, Python, and JavaScript.
+- Designed and created 40+ hydroponics growing pots with a customizable seedlings’ density distribution system and optimized a **hydroponics planting protocol** for future experiments.
+
+</SectionEntry.EntryContent>
+</SectionEntry.Entry>
+
+
+<SectionEntry.Entry>
+<SectionEntry.EntryHeading fromYYYYMM="202210" toYYYYMM="202305" footnote="Missouri State University – Springfield, MO">
+
+### Student Tutor
+
+</SectionEntry.EntryHeading>
+<SectionEntry.EntryContent>
+
+- **Led groups** of over 25 students weekly through advanced biology, chemistry, and physics courses, creating up to 10 customized study plans each semester.
+- Assisted in demonstrating and executing biology and chemistry **experiments**, emphasizing the technical mechanisms underlying each phenomenon. 
+- Achieved a 20% increase in study group session attendance over the semester and maintained a 95% positive feedback rate from both peers and students.
+
+</SectionEntry.EntryContent>
+</SectionEntry.Entry>
+
+<!-- 
+<SectionEntry.Entry>
+<SectionEntry.EntryHeading fromYYYYMM="" toYYYYMM="" footnote="">
+
+### 
+
+</SectionEntry.EntryHeading>
+<SectionEntry.EntryContent>
+
+
+
+</SectionEntry.EntryContent>
+<SectionEntry.Entry>
+ -->
+
+</SectionEntry.Root>
+
+
+
+
+<SectionEntry.Root>
+<SectionEntry.Title>
+
+## SKILLS
+
+</SectionEntry.Title>
+<SectionEntry.Entry>
+<SectionEntry.EntryContent>
+
+### Programming
+MATLAB, NodeJS, Python, R, Rust, C# (Unity), Docker, GitHub Workflows
+
+### Embedded Systems
+Microprocessors, single-board computer, circuit design, soldering
+
+### Web Development
+SvelteKit, TailwindCSS, Bun, Tauri, WebAssembly, HTML, CSS, JavaScript
+
+### Bioinformatics
+CLC Genomics Workbench, KiloSort, Suite2p, Cellpose, ClearMap, Allen SDK
+
+### Productivity
+GraphPad Prism, ImageJ, Figma, Adobe Photoshop, Illustrator, Audition, Ableton Live
+
+</SectionEntry.EntryContent>
+</SectionEntry.Entry>
+</SectionEntry.Root>
+
+
+<div class="h-3"></div>
+
+<SectionEntry.Root>
+<SectionEntry.Title>
+
+## PUBLICATIONS
+
+</SectionEntry.Title>
+<SectionEntry.Entry>
+
+<SectionEntry.EntryContent>
+<div data-slot="publications-list">
+
+2025. Barkasi, M., **Pham, C. N.**, Neophytou, D., Oviedo, H. V. (2025). <span class="paper-title">Logistic regression for estimating functional effects with spatial transcriptomics.</span> *bioRxiv*. [10.1101/2025.06.11.659209](https://doi.org/10.1101/2025.06.11.659209) <sup>\[preprint]</sup>
+
+2025. Reid, A.P., Neophytou, D., Levy, R., **Pham, C. N.**, Oviedo, H. V. (2025). <span class="paper-title">Asynchronous development of the mouse auditory cortex is driven by hemispheric identity and sex.</span> *Nat Commun* 16, 3654. [10.1038/s41467-025-58891-3](https://doi.org/10.1038/s41467-025-58891-3)
+
+2024. Mays, V., Smith, N., **Pham, C. N.**, White, M., Wu, Q., Berry, J., Linan, A., Alexander Wait, D., & Kovacs, L. (2024). <span class="paper-title">Attenuation of photosynthesis in nanosilver-treated *Arabidopsis thaliana* is inherently linked to the particulate nature of silver.</span> *Heliyon*, 10(6). [10.1016/j.heliyon.2024.e27583](https://doi.org/10.1016/j.heliyon.2024.e27583)
+
+</div>
+</SectionEntry.EntryContent>
+</SectionEntry.Entry>
+</SectionEntry.Root>
+
