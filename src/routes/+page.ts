@@ -374,7 +374,7 @@ const topPicks: TopPicksData[] = [
             { text: "TailwindCSS" },
             { text: "Bun" },
         ],
-        href: "https://codynhanpham.com/grid_clicker/",
+        href: "https://github.com/codynhanpham/grid_clicker",
         primaryButton: {
             text: "Source Code",
             alt: "Check out the project on GitHub",
@@ -384,7 +384,7 @@ const topPicks: TopPicksData[] = [
                     class: "size-5",
                 },
             },
-            href: "https://codynhanpham.com/grid_clicker/",
+            href: "https://github.com/codynhanpham/grid_clicker",
         },
         secondaryButton: {
             alt: "Releases / Downloads",

@@ -302,13 +302,6 @@
 		}
 		sessionStorage.setItem('forcedSmallScreen', forcedSmallScreen === true ? 'true' : 'false');
 	});
-
-	// $effect(() => {
-	// 	if (isNavOpen !== undefined || horizontalNavBarWidth != 0) {
-	// 		contentElemRect = checkElemRectSize(contentWrapperElement);
-	// 		// console.log($state.snapshot(contentElemRect));
-	// 	}
-	// });
 </script>
 
 
