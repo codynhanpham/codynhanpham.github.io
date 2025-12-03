@@ -23,6 +23,7 @@ jobs:
         env:
           BASE_PATH: '/${{ github.event.repository.name }}'
         run: |
+          cargo install wasm-pack
           bun install
           bun run build
 
