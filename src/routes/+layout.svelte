@@ -330,7 +330,7 @@
 </svelte:head>
 
 
-<ModeWatcher />
+<ModeWatcher defaultMode={"dark"} />
 <Toaster />
 
 <!-- Show loading animation -->
