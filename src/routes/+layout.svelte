@@ -210,6 +210,24 @@
 
 
 
+		// Load Google Analytics after page renders
+		const script = document.createElement('script');
+		script.async = true;
+		script.src = 'https://www.googletagmanager.com/gtag/js?id=G-BFS77G1W4V';
+		document.head.appendChild(script);
+		
+		script.onload = () => {
+			(window as any).dataLayer = (window as any).dataLayer || [];
+			function gtag(...args: any[]){
+				(window as any).dataLayer.push(arguments);
+			}
+			(window as any).gtag = gtag;
+			gtag('js', new Date());
+			gtag('config', 'G-BFS77G1W4V');
+		};
+
+
+
 		/// Show WIP toast for now! Page is still under development
 		toast('🚧 Page Under Construction 🚧', {
 			description:
@@ -307,17 +325,6 @@
 
 <svelte:head>
     <meta name="author" content="Cody Nhan Pham">
-	
-	<!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFS77G1W4V"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-BFS77G1W4V');
-    </script>
-
 
 	<title>Cody Nhan Pham</title>
 </svelte:head>
