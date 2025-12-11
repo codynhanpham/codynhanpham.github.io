@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="%paraglide.lang%" data-theme="default" class="bg-sidebar">
+<html lang="%paraglide.lang%" data-theme="default" style="background-color: var(--sidebar);">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/assets/logo/variants/logo-0.svg" />
@@ -8,20 +8,26 @@
 		<meta name="theme-color" content="#fafaf9" />
 		<meta name="theme-color" content="#1c1917" media="(prefers-color-scheme: dark)" />
 
+		<style>
+			:root {
+				--sidebar: #fafaf9; /* Light mode default */
+			}
+			@media (prefers-color-scheme: dark) {
+				:root {
+					--sidebar: #1c1917; /* Dark mode default */
+				}
+			}
+		</style>
+
+
 		<!-- FONTS -->
-		<link
-			rel="preload"
-			href="%sveltekit.assets%/assets/fonts/Cherish-Regular.ttf"
-			as="font"
-			type="font/ttf"
-			crossorigin="anonymous"
-		/>
 		<link
 			rel="preload"
 			href="%sveltekit.assets%/assets/fonts/NotoSans-VariableFont_wdth,wght.ttf"
 			as="font"
 			type="font/ttf"
 			crossorigin="anonymous"
+			fetchpriority="auto"
 		/>
 		<link
 			rel="preload"
@@ -29,20 +35,7 @@
 			as="font"
 			type="font/ttf"
 			crossorigin="anonymous"
-		/>
-		<link
-			rel="preload"
-			href="%sveltekit.assets%/assets/fonts/Juergen-Stylo-Medium.ttf"
-			as="font"
-			type="font/ttf"
-			crossorigin="anonymous"
-		/>
-		<link
-			rel="preload"
-			href="%sveltekit.assets%/assets/fonts/Juergen-Manuscript-Medium.ttf"
-			as="font"
-			type="font/ttf"
-			crossorigin="anonymous"
+			fetchpriority="low"
 		/>
 
 		<!-- APPLE THINGS -->
@@ -51,7 +44,7 @@
 
 		%sveltekit.head%
 	</head>
-	<body data-sveltekit-preload-data="hover" class="bg-sidebar">
+	<body data-sveltekit-preload-data="hover" style="background-color: var(--sidebar);">
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>
