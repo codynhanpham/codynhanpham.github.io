@@ -47,13 +47,13 @@
                     {:else}
                         <Sun class="size-4 mx-0.5" />
                     {/if}
-                    <span class="!block text-sm text-muted-foreground">
+                    <span class="block! text-sm text-muted-foreground">
                         {mode.current === 'dark' ? 'Dark' : mode.current === 'light' ? 'Light' : 'System'}
                     </span>
                 </div>
                 <span class="sr-only">Toggle theme</span>
             </Select.Trigger>
-            <Select.Content class="text-sm text-muted-foreground p-0 m-0 z-[99999]">
+            <Select.Content class="text-sm text-muted-foreground p-0 m-0 z-99999">
                 <Select.Item
                     value="light"
                     class="flex items-center justify-start gap-3 w-full px-1.5 py-2"
@@ -62,7 +62,7 @@
                     }}
                 >
                     <Sun class="size-4 hover:text-current" />
-                    <span class="!block">Light</span>
+                    <span class="block!">Light</span>
                 </Select.Item>
                 <Select.Item
                     value="dark"
@@ -72,7 +72,7 @@
                     }}
                 >
                     <Moon class="size-4 hover:text-current" />
-                    <span class="!block">Dark</span>
+                    <span class="block!">Dark</span>
                 </Select.Item>
                 <Select.Item
                     disabled={mode.current === systemPrefersMode.current}
@@ -83,7 +83,7 @@
                     }}
                 >
                     <MonitorCog class="size-4 hover:text-current" />
-                    <span class="!block">System</span>
+                    <span class="block!">System</span>
                 </Select.Item>
             </Select.Content>
         </Select.Root>

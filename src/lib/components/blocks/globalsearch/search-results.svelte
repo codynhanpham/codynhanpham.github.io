@@ -113,7 +113,7 @@
                             disabled={item.disabled}
                             href={item.href}
                             onclick={item.onClick}
-                            class="flex flex-row items-center justify-start font-medium gap-3 px-3 border border-transparent [&[data-selected]]:border-border"
+                            class="flex flex-row items-center justify-start font-medium gap-3 px-3 border border-transparent data-selected:border-border"
                             aria-label={item.title}
                             onSelect={() => {
                                 if (item.keepStateAfterSelected === true) {
@@ -161,7 +161,7 @@
                             value={itemValue}
                             disabled={item.disabled}
                             onclick={item.onClick}
-                            class="flex flex-row items-center justify-start font-medium gap-3 px-3 border border-transparent [&[data-selected]]:border-border"
+                            class="flex flex-row items-center justify-start font-medium gap-3 px-3 border border-transparent data-selected:border-border"
                             aria-label={item.title}
                             onSelect={() => {
                                 if (item.keepStateAfterSelected === true) {
@@ -208,11 +208,11 @@
                 {/each}
             </Command.Group>
             {#if i < data.length - 1}
-                <Command.Separator forceMount class="!mx-0 bg-border h-px w-full" />
+                <Command.Separator forceMount class="mx-0! bg-border h-px w-full" />
             {/if}
         {/each}
         {#if remaining_results > 0}
-            <Command.Separator forceMount class="!mx-0 bg-border h-px w-full" />
+            <Command.Separator forceMount class="mx-0! bg-border h-px w-full" />
             <Command.Group 
                 heading={undefined} 
                 class="bg-accent/50"

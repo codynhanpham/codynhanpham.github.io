@@ -214,7 +214,7 @@
         loop
         shouldFilter={false}
         class={cn(
-            "relative w-full !h-fit border bg-sidebar/70",
+            "relative w-full h-fit! border bg-sidebar/70",
             (((GlobalSearchData.searchResults?.length || (GlobalSearchData.value?.length || 0) >= 5 || hasMiscResults) && searchboxActive) ? 'inputwrapper_active' : 'inputwrapper_inactive')
             )}
         onfocus={() => {
@@ -269,7 +269,7 @@
             id="command-quick-input-action"
             variant="secondary"
             class={cn(
-                "absolute cursor-pointer h-6 w-fit rounded-sm right-0 mx-2 !px-3 !py-2 border border-transparent hover:border-border",
+                "absolute cursor-pointer h-6 w-fit rounded-sm right-0 mx-2 px-3! py-2! border border-transparent hover:border-border",
                 (GlobalSearchData.value ? "text-red-950 dark:text-red-50 bg-destructive/5 border-destructive/20 hover:border-destructive/20 hover:bg-destructive/10" : "")
             )}
             style={`top: calc(0px + (var(--spacing) * 3)/2);`}
