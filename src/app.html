@@ -33,23 +33,6 @@
 				color: var(--foreground);
 			}
 		</style>
-		<script>
-			// Quickly check localStorage for mode-watcher-mode
-			// Fallback to prefers-color-scheme
-			try {
-				if (localStorage.getItem('mode-watcher-mode') === 'dark') {
-					document.documentElement.classList.add('dark');
-				} else if (localStorage.getItem('mode-watcher-mode') === 'light') {
-					document.documentElement.classList.remove('dark');
-				} else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-					document.documentElement.classList.add('dark');
-				} else {
-					document.documentElement.classList.remove('dark');
-				}
-			} catch (e) {
-				// It's fine, nothing to do here
-			}
-		</script>
 
 
 		<!-- FONTS -->
