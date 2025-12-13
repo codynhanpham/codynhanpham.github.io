@@ -39,7 +39,7 @@
         }
 
         a {
-            @apply text-hyperlink hover:text-hyperlink-active !text-wrap !wrap-anywhere focus-visible:outline-none focus-visible:ring focus-visible:ring-2 focus-visible:rounded-xs focus-visible:ring-offset-transparent focus-visible:ring-ring !break-all;
+            @apply text-hyperlink hover:text-hyperlink-active !text-wrap !wrap-anywhere focus-visible:outline-none focus-visible:ring-2 focus-visible:rounded-xs focus-visible:ring-offset-transparent focus-visible:ring-ring !break-all;
             box-decoration-break: clone;
             -webkit-box-decoration-break: clone;
 

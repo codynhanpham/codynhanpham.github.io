@@ -335,7 +335,8 @@
 
 <!-- Show loading animation -->
 {#if !isPageReady}
-	<div 
+	<div
+		id="loading-screen-overlay"
         out:fade={{ duration: 300, easing: cubicOut, delay: 50 }}
         class="fixed w-[200%] h-[200%] flex items-center justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-sidebar z-[99999] isolate"
     >

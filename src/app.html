@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="%paraglide.lang%" data-theme="default" style="background-color: var(--sidebar);">
+<html lang="%paraglide.lang%" data-theme="default">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/assets/logo/variants/logo-0.svg" />
@@ -9,13 +9,23 @@
 		<meta name="theme-color" content="#1c1917" media="(prefers-color-scheme: dark)" />
 
 		<style>
+			/* Just some general defaults that look good for light and dark mode before the full theme loads */
+			/* This avoids a flash of unstyled content / mismatch color theme */
 			:root {
-				--sidebar: #fafaf9; /* Light mode default */
+				--background: oklch(1 0 0);
+				--sidebar: oklch(0.985 0.001 106.423);
+				--foreground: oklch(0.147 0.004 49.25);
 			}
 			@media (prefers-color-scheme: dark) {
 				:root {
-					--sidebar: #1c1917; /* Dark mode default */
+					--background: oklch(0.147 0.004 49.25);
+					--sidebar: oklch(0.216 0.006 56.043);
+					--foreground: oklch(0.985 0.001 106.423);
 				}
+			}
+			html, body {
+				background-color: var(--sidebar);
+				color: var(--foreground);
 			}
 		</style>
 
@@ -44,7 +54,7 @@
 
 		%sveltekit.head%
 	</head>
-	<body data-sveltekit-preload-data="hover" style="background-color: var(--sidebar);">
+	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>

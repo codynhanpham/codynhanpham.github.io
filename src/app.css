@@ -111,8 +111,8 @@
 		display: flex;
 		flex-direction: column;
 	}
-	body {
-		@apply bg-background text-foreground;
+	html, body {
+		@apply bg-sidebar text-foreground;
 	}
 
 	/* https://www.reddit.com/r/webdev/comments/1ihv7iz/removing_the_stupid_space_above_and_below_text/ */
