@@ -16,6 +16,11 @@
 				--sidebar: oklch(0.985 0.001 106.423);
 				--foreground: oklch(0.147 0.004 49.25);
 			}
+			.dark {
+				--background: oklch(0.147 0.004 49.25);
+				--sidebar: oklch(0.216 0.006 56.043);
+				--foreground: oklch(0.985 0.001 106.423);
+			}
 			@media (prefers-color-scheme: dark) {
 				:root {
 					--background: oklch(0.147 0.004 49.25);
@@ -28,6 +33,23 @@
 				color: var(--foreground);
 			}
 		</style>
+		<script>
+			// Quickly check localStorage for mode-watcher-mode
+			// Fallback to prefers-color-scheme
+			try {
+				if (localStorage.getItem('mode-watcher-mode') === 'dark') {
+					document.documentElement.classList.add('dark');
+				} else if (localStorage.getItem('mode-watcher-mode') === 'light') {
+					document.documentElement.classList.remove('dark');
+				} else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+					document.documentElement.classList.add('dark');
+				} else {
+					document.documentElement.classList.remove('dark');
+				}
+			} catch (e) {
+				// It's fine, nothing to do here
+			}
+		</script>
 
 
 		<!-- FONTS -->
