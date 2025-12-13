@@ -39,16 +39,16 @@
 
 <div>
     {#if isNavOpen}
-        <Select.Root type="single" value={$mode ?? 'system'}>
+        <Select.Root type="single" value={mode.current ?? 'system'}>
             <Select.Trigger class="flex items-between justify-start gap-4 w-full px-2 py-2">
                 <div class="flex items-center justify-start gap-3 w-full">
-                    {#if $mode === 'dark'}
+                    {#if mode.current === 'dark'}
                         <Moon class="size-4 mx-0.5" />
                     {:else}
                         <Sun class="size-4 mx-0.5" />
                     {/if}
                     <span class="!block text-sm text-muted-foreground">
-                        {$mode === 'dark' ? 'Dark' : $mode === 'light' ? 'Light' : 'System'}
+                        {mode.current === 'dark' ? 'Dark' : mode.current === 'light' ? 'Light' : 'System'}
                     </span>
                 </div>
                 <span class="sr-only">Toggle theme</span>
@@ -75,7 +75,7 @@
                     <span class="!block">Dark</span>
                 </Select.Item>
                 <Select.Item
-                    disabled={$mode === $systemPrefersMode}
+                    disabled={mode.current === systemPrefersMode.current}
                     value="system"
                     class="flex items-center justify-start gap-3 w-full px-1.5 py-2"
                     onclick={() => {

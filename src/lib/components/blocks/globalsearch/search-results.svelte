@@ -86,8 +86,7 @@
 	import * as Command from '$lib/components/ui/command';
     import { Badge } from '$lib/components/ui/badge';
 
-    import hash from 'object-hash';
-    import { sha256, sha224 } from 'js-sha256';
+    import { sha256 } from 'js-sha256';
     
     
 

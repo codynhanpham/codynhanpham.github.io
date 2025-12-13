@@ -87,7 +87,9 @@
         return miscSearchResultsState.some((state) => state);
     });
 
-    GlobalSearchData.emptyResultsMessage = emptyResultsMessage;
+    $effect(() => {
+        GlobalSearchData.emptyResultsMessage = emptyResultsMessage;
+    });
 
     let isSearching = $state(false);
     let pointerIsTouching = $state(false);

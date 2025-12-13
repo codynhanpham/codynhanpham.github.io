@@ -85,16 +85,22 @@
         ref = $bindable(undefined),
     }: YoutubeEmbedProps = $props();
 
-    // Actually, video is is 11 chars for now, but use 12 to be safe since playlist id will absolutely be longer than 12
-    let f_playerVars = { ...playerVars };
-    const isVideo = videoId.length <=12;
-    if (videoId.length > 12) {
-        f_playerVars.listType = "playlist";
-        f_playerVars.list = videoId;
-        f_playerVars.videoId = "";
-    }
+    // Keep a stable DOM id; avoid capturing `videoId` into a top-level constant.
+    const iframeId = uuidv4();
 
-    const iframeId = `${uuidv4()}|${videoId}`;
+    // Actually, video id is 11 chars for now, but use 12 to be safe since playlist id will absolutely be longer than 12
+    let isVideo = $derived(videoId.length <= 12);
+    let f_playerVars = $derived.by(() => {
+        const next = { ...playerVars } as any;
+
+        if (videoId.length > 12) {
+            next.listType = "playlist";
+            next.list = videoId;
+            next.videoId = "";
+        }
+
+        return next;
+    });
     let uiPlayerButton: HTMLButtonElement | null = null;
     let playerReady = $state(false);
     let playerInteracted = $state(false);

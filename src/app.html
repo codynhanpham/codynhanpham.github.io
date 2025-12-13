@@ -4,7 +4,6 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/assets/logo/variants/logo-0.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link href="/assets/fonts/Cherish-Regular.ttf" rel="prefetch" type="font/ttf" />
 		<meta name="theme-color" content="#fafaf9" />
 		<meta name="theme-color" content="#1c1917" media="(prefers-color-scheme: dark)" />
 
@@ -49,7 +48,7 @@
 				--sidebar: oklch(0.216 0.006 56.043);
 				--foreground: oklch(0.985 0.001 106.423);
 			}
-			html, body {
+			html, body, #loading-screen-overlay {
 				background-color: var(--sidebar);
 				color: var(--foreground);
 			}
@@ -57,6 +56,14 @@
 
 
 		<!-- FONTS -->
+		<link
+			rel="preload"
+			href="%sveltekit.assets%/assets/fonts/Cherish-Regular.ttf"
+			as="font"
+			type="font/ttf"
+			crossorigin="anonymous"
+			fetchpriority="auto"
+		/>
 		<link
 			rel="preload"
 			href="%sveltekit.assets%/assets/fonts/NotoSans-VariableFont_wdth,wght.ttf"
