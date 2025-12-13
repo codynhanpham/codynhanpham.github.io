@@ -8,9 +8,37 @@
 		<meta name="theme-color" content="#fafaf9" />
 		<meta name="theme-color" content="#1c1917" media="(prefers-color-scheme: dark)" />
 
+		<script>
+			// Some initial theme setup to avoid flash of incorrect theme on page load
+			(function() {
+				try {
+					const mode = localStorage.getItem('mode-watcher-mode');
+					const system = window.matchMedia('(prefers-color-scheme: dark)').matches;
+					const is = (val, target) => val === target || val === `"${target}"`;
+					let shouldBeDark = true; // Default to dark. Who even uses light mode?
+					if (is(mode, 'light')) {
+						shouldBeDark = false;
+					} else if (is(mode, 'system')) {
+						shouldBeDark = system;
+					} else if (is(mode, 'dark')) {
+						shouldBeDark = true;
+					} else {
+						shouldBeDark = true;
+					}
+					if (shouldBeDark) {
+						document.documentElement.classList.add('dark');
+					} else {
+						document.documentElement.classList.remove('dark');
+					}
+				} catch (e) {
+					console.warn('Initial theme setup error:', e);
+				}
+			})();
+		</script>
+
 		<style>
 			/* Just some general defaults that look good for light and dark mode before the full theme loads */
-			/* This avoids a flash of unstyled content / mismatch color theme */
+			/* This hopefully avoids a flash of unstyled content / mismatch color theme */
 			:root {
 				--background: oklch(1 0 0);
 				--sidebar: oklch(0.985 0.001 106.423);
@@ -20,13 +48,6 @@
 				--background: oklch(0.147 0.004 49.25);
 				--sidebar: oklch(0.216 0.006 56.043);
 				--foreground: oklch(0.985 0.001 106.423);
-			}
-			@media (prefers-color-scheme: dark) {
-				:root {
-					--background: oklch(0.147 0.004 49.25);
-					--sidebar: oklch(0.216 0.006 56.043);
-					--foreground: oklch(0.985 0.001 106.423);
-				}
 			}
 			html, body {
 				background-color: var(--sidebar);
