@@ -19,4 +19,19 @@ export default defineConfig({
 			outdir: './src/lib/paraglide'
 		}),
 	],
+	build: {
+		minify: 'esbuild',
+		cssMinify: true,
+		rollupOptions: {
+			output: {
+				compact: true
+			}
+		}
+	},
+	esbuild: {
+		legalComments: 'none',
+		minifyIdentifiers: true,
+		minifySyntax: true,
+		minifyWhitespace: true
+	}
 });

@@ -2,7 +2,7 @@
 @import 'tw-animate-css';
 @import './themes/default.css';
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:is(.dark &, .dark *));
 
 @font-face {
 	font-family: 'Noto Sans';
