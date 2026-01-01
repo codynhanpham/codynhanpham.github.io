@@ -101,7 +101,7 @@
 	import { scrollY } from './appstate.svelte';
 	import { navLog, saveNavLog } from './appstate.svelte';
 
-	import { cn } from '$lib/utils';
+	import { cn, toLogical } from '$lib/utils';
 
 	import {
 		Menu,
@@ -123,6 +123,11 @@
 	import NavMenu from '$lib/front-end/NavMenu.svelte';
 
 	import { toast } from "svelte-sonner";
+
+
+	import {
+		PUBLIC_SHOW_WIP_TOAST
+	} from '$env/static/public';
 
 
 	// WASM lib to be available in all routes
@@ -229,24 +234,23 @@
 
 
 		/// Show WIP toast for now! Page is still under development
-		toast('🚧 Page Under Construction 🚧', {
-			description:
-				"The website is undergoing a big rewrite and update. Expect blank pages, missing page data, broken links, and never-ending loading indicators. Most pages from the old site can be looked up using the search box for now! Sorry for the inconvenience <3",
-			duration: Number.POSITIVE_INFINITY,
-			// style:
-			// 	'display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.5rem; padding: 1rem;',
-			// class: '!bg-background/70 backdrop-blur-sm !border-border',
-			classes: {
-				toast: 'flex flex-col items-center justify-center gap-2 py-4 !h-fit !bg-background/85 backdrop-blur-2xl border !border-border text-xs !text-foreground [&_button]:!bg-primary [&_button]:!text-primary-foreground [&_button]:!hover:bg-primary/80 [&_button]:!font-semibold',
-				title: '!font-bold !text-sm !text-foreground mb-2',
-				description: '!font-normal !text-xs !text-muted-foreground',
-			},
-			cancel: {
-				label: 'Got it!',
-				onClick: () => {},
-			}
-		});
-
+		const SHOW_WIP_TOAST = toLogical(PUBLIC_SHOW_WIP_TOAST);
+		if (SHOW_WIP_TOAST) {
+			toast('🚧 Page Under Construction 🚧', {
+				description:
+					"The website is undergoing a big rewrite and update. Expect blank pages, missing page data, broken links, and never-ending loading indicators. Most pages from the old site can be looked up using the search box for now! Sorry for the inconvenience <3",
+				duration: Number.POSITIVE_INFINITY,
+				classes: {
+					toast: 'flex flex-col items-center justify-center gap-2 py-4 !h-fit !bg-background/85 backdrop-blur-2xl border !border-border text-xs !text-foreground [&_button]:!bg-primary [&_button]:!text-primary-foreground [&_button]:!hover:bg-primary/80 [&_button]:!font-semibold',
+					title: '!font-bold !text-sm !text-foreground mb-2',
+					description: '!font-normal !text-xs !text-muted-foreground',
+				},
+				cancel: {
+					label: 'Got it!',
+					onClick: () => {},
+				}
+			});
+		}
 
 	});
 	
@@ -338,7 +342,7 @@
 	<div
 		id="loading-screen-overlay"
         out:fade={{ duration: 300, easing: cubicOut, delay: 50 }}
-        class="fixed w-[200%] h-[200%] flex items-center justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-sidebar z-[99999] isolate"
+        class="fixed w-[200%] h-[200%] flex items-center justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-sidebar z-99999 isolate"
     >
         <Logo class="size-20" animate={!isPageReady ? "loading" : "spin-fast"} />
     </div>
@@ -350,7 +354,7 @@
 		in:slide={{ duration: 50, easing: cubicOut, axis: 'x' }}
 		out:fade={{ duration: 100, easing: linear }}
 		style="width: {loadingbarProgress}%;"
-		class="fixed top-13 left-0 h-0.5 max-w-full bg-primary/50 backdrop-blur-sm z-[99998] isolate"
+		class="fixed top-13 left-0 h-0.5 max-w-full bg-primary/50 backdrop-blur-sm z-99998 isolate"
 	>
 	</div>
 
@@ -361,7 +365,7 @@
 {#if isPageReady}
 	<div
 		in:fade={{ duration: 100, easing: cubicOut, delay: 0 }}
-		class="fixed top-0 left-0 w-full h-13 z-[9999] isolate"
+		class="fixed top-0 left-0 w-full h-13 z-9999 isolate"
 	>
 		<div class="h-full flex items-center justify-between gap-2 px-2">
 			{#if !isSmallScreen && !forcedSmallScreen}
@@ -379,7 +383,7 @@
 							<Button
 								variant="ghost"
 								class={cn(
-									"group mt-1 h-11 w-fit !px-2.5 !py-2 !pt-2.5 select-none",
+									"group mt-1 h-11 w-fit px-2.5! py-2! pt-2.5! select-none",
 								)}
 								aria-label="Home"
 								href="/"
@@ -424,8 +428,8 @@
 	</div>
 
 	{#if isSmallScreen}
-	<div class="fixed top-0 left-0 w-full h-13 z-[9998] isolate overflow-hidden">
-		<div class="w-full h-[100%] bg-sidebar/70 backdrop-blur-xl"></div>
+	<div class="fixed top-0 left-0 w-full h-13 z-9998 isolate overflow-hidden">
+		<div class="w-full h-full bg-sidebar/70 backdrop-blur-xl"></div>
 	</div>
 	{/if}
 {/if}
@@ -445,8 +449,8 @@
 	</svg>
 
 	{#if !isSmallScreen}
-	<div class="fixed top-0 left-0 w-full h-full z-[10] isolate overflow-hidden pointer-events-none">
-		<div id="stainedglassexperience" class={cn("w-[100%] h-[100%] backdrop-blur-3xl bg-sidebar/50",
+	<div class="fixed top-0 left-0 w-full h-full z-10 isolate overflow-hidden pointer-events-none">
+		<div id="stainedglassexperience" class={cn("w-full h-full backdrop-blur-3xl bg-sidebar/50",
 
 		)}></div>
 	</div>

@@ -29,7 +29,7 @@
         </div>
     
         <Alert.Root variant="destructive" class="w-fit h-fit max-w-full">
-            <CircleAlert class="!size-5" />
+            <CircleAlert class="size-5!" />
             <Alert.Title>
                 <h1 class="w-fit">HTTP { page.status }</h1>
             </Alert.Title>

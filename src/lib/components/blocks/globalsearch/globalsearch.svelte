@@ -50,6 +50,14 @@
     export function getActiveItemValue(): string | undefined {
         return GlobalSearchData.activeItemValue;
     }
+
+    export function forceCleanUpSearchBarAfterClick() {
+        setGlobalSearchData({
+            value: '',
+            searchResults: undefined,
+        });
+        blurGlobalSearchInput();
+    }
 </script>
 
 <script lang="ts">

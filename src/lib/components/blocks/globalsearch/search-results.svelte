@@ -4,6 +4,7 @@
     
     export type SearchResultsItem = {
         title: string;
+        shortTitle?: string;
         description?: string;
         keywords?: string[];
         icon?: typeof IconType | validSimpleIconNames; // The icon that renders to the left of the item

@@ -180,9 +180,13 @@ GraphPad Prism, ImageJ, Figma, Adobe Photoshop, Illustrator, Audition, Ableton L
 <SectionEntry.EntryContent>
 <div data-slot="publications-list">
 
+<!-- For the entries here, ensure at least 2 spaces between entries to avoid treating them as a single ordered list -->
+
 2025. Barkasi, M., **Pham, C. N.**, Neophytou, D., Oviedo, H. V. (2025). <span class="paper-title">Logistic regression for estimating functional effects with spatial transcriptomics.</span> *bioRxiv*. [10.1101/2025.06.11.659209](https://doi.org/10.1101/2025.06.11.659209) <sup>\[preprint]</sup>
 
+
 2025. Reid, A.P., Neophytou, D., Levy, R., **Pham, C. N.**, Oviedo, H. V. (2025). <span class="paper-title">Asynchronous development of the mouse auditory cortex is driven by hemispheric identity and sex.</span> *Nat Commun* 16, 3654. [10.1038/s41467-025-58891-3](https://doi.org/10.1038/s41467-025-58891-3)
+
 
 2024. Mays, V., Smith, N., **Pham, C. N.**, White, M., Wu, Q., Berry, J., Linan, A., Alexander Wait, D., & Kovacs, L. (2024). <span class="paper-title">Attenuation of photosynthesis in nanosilver-treated *Arabidopsis thaliana* is inherently linked to the particulate nature of silver.</span> *Heliyon*, 10(6). [10.1016/j.heliyon.2024.e27583](https://doi.org/10.1016/j.heliyon.2024.e27583)
 

@@ -25,10 +25,10 @@
 	<div class="h-full w-full my-2 lg:my-4 space-y-2 lg:space-y-4">
 		<section class="h-max w-auto mx-2 lg:mx-4 bg-secondary p-2 pb-4 rounded-md flex flex-col">
 			<Button variant="ghost"
-				class="group w-full flex flex-row items-center justify-between gap-4 mb-2 !pr-1.5 hover:cursor-pointer"
+				class="group w-full flex flex-row items-center justify-between gap-4 mb-2 pr-1.5! hover:cursor-pointer"
 				href="/works/highlights"
 			>
-				<h2 id="highlights" class="scroll-mt-17.5 lg:scroll-mt-19.5 w-fit text-left text-secondary-foreground text-xl my-1 font-semibold underline-offset-4 !select-all link-underline">
+				<h2 id="highlights" class="scroll-mt-17.5 lg:scroll-mt-19.5 w-fit text-left text-secondary-foreground text-xl my-1 font-semibold underline-offset-4 select-all! link-underline">
 					Highlights
 				</h2>
 				<ChevronRight class="size-5 duration-100 group-hover:translate-x-0.5" />
@@ -48,12 +48,12 @@
 			</div>
 		</section>
 
-		<section class="h-max w-auto mx-2 lg:mx-4 bg-secondary p-2 pb-4 rounded-md flex flex-col">
+		<section class="h-full w-auto mx-2 lg:mx-4 bg-secondary p-2 pb-4 rounded-md flex flex-col">
 			<Button variant="ghost"
-				class="group w-full flex flex-row items-center justify-between gap-4 mb-2 !pr-1.5 hover:cursor-pointer"
+				class="group w-full flex flex-row items-center justify-between gap-4 mb-2 pr-1.5! hover:cursor-pointer"
 				href="/works/resume"
 			>
-				<h2 id="resume" class="scroll-mt-17.5 lg:scroll-mt-19.5 w-fit text-left text-secondary-foreground text-xl my-1 font-semibold underline-offset-4 !select-all link-underline">
+				<h2 id="resume" class="scroll-mt-17.5 lg:scroll-mt-19.5 w-fit text-left text-secondary-foreground text-xl my-1 font-semibold underline-offset-4 select-all! link-underline">
 					Résumé
 				</h2>
 				<ChevronRight class="size-5 duration-100 group-hover:translate-x-0.5" />

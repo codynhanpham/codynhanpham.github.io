@@ -72,7 +72,7 @@
 
 
 <main class={cn("relative w-full flex flex-col items-center justify-start gap-4 text-center p-0 pb-1 rounded-md overflow-clip")}>
-	<div data-home-hero-wrapper class={cn("relative w-full h-screen min-h-[960px] rounded-md overflow-hidden isolate will-change-transform")}>
+	<div data-home-hero-wrapper class={cn("relative w-full h-screen min-h-240 rounded-md overflow-hidden isolate will-change-transform")}>
 		<div data-home-hero-skeleton class="absolute top-0 left-0 w-full h-full -z-10 bg-accent/50 animation-pulse"></div>
 		<Carousel.Root
 			setApi={(emblaApi) => { carouapi = emblaApi; autoplay = emblaApi?.plugins()?.autoplay; }}
@@ -114,7 +114,7 @@
 					stopOnMouseEnter: true,
 				}),
 			]}
-			class={cn("absolute top-0 left-0 w-full h-full [&>[data-slot='carousel-content']]:h-full")}
+			class={cn("absolute top-0 left-0 w-full h-full *:data-[slot='carousel-content']:h-full")}
 		>
 			<Carousel.Content class={cn("h-full")}>
 				{#each data.hero as item, index}
@@ -122,12 +122,12 @@
 				{/each}
 			</Carousel.Content>
 
-			<Carousel.Previous variant="ghost" class={cn("z-10 w-22 top-3/12 left-0 rounded-sm !border-none !bg-none !bg-transparent opacity-20 dark:opacity-40 focus-visible:opacity-95 hover:opacity-95 hover:cursor-pointer", (isSmallScreen ? "top-3/11 opacity-5 dark:opacity-5 hover:opacity-15 h-[50%] w-10" : "h-32 max-h-full"))} 
+			<Carousel.Previous variant="ghost" class={cn("z-10 w-22 top-3/12 left-0 rounded-sm border-none! bg-none! bg-transparent! opacity-20 dark:opacity-40 focus-visible:opacity-95 hover:opacity-95 hover:cursor-pointer", (isSmallScreen ? "top-3/11 opacity-5 dark:opacity-5 hover:opacity-15 h-[50%] w-10" : "h-32 max-h-full"))} 
 				onmouseenter={() => { autoplay?.stop() }}
 				onmouseleave={() => { autoplay?.play(); autoplay?.reset(); }}
 			/>
 
-			<Carousel.Next variant="ghost" class={cn("z-10 w-22 top-3/12 right-0 rounded-sm !border-none !bg-none !bg-transparent opacity-20 dark:opacity-40 focus-visible:opacity-95 hover:opacity-95 hover:cursor-pointer", (isSmallScreen ? "top-3/11 opacity-5 dark:opacity-5 hover:opacity-15 h-[50%] w-10" : "h-32 max-h-full"))} 
+			<Carousel.Next variant="ghost" class={cn("z-10 w-22 top-3/12 right-0 rounded-sm border-none! bg-none! bg-transparent! opacity-20 dark:opacity-40 focus-visible:opacity-95 hover:opacity-95 hover:cursor-pointer", (isSmallScreen ? "top-3/11 opacity-5 dark:opacity-5 hover:opacity-15 h-[50%] w-10" : "h-32 max-h-full"))} 
 				onmouseenter={() => { autoplay?.stop() }}
 				onmouseleave={() => { autoplay?.play(); autoplay?.reset(); }}
 			/>
@@ -168,15 +168,15 @@
 							}
 						}
 					}}
-					class="relative isolate w-full mx-0 [&>[data-slot='carousel-content']]:mask-x-from-88% sm:[&>[data-slot='carousel-content']]:mask-x-from-85% md:[&>[data-slot='carousel-content']]:mask-x-from-85% min-[110rem]:[&>[data-slot='carousel-content']]:mask-x-from-85% [&>[data-slot='carousel-content']]:mask-x-to-105% md:[&>[data-slot='carousel-content']]:mask-x-to-102%"
+					class="relative isolate w-full mx-0 *:data-[slot='carousel-content']:mask-x-from-88% sm:*:data-[slot='carousel-content']:mask-x-from-85% md:*:data-[slot='carousel-content']:mask-x-from-85% min-[110rem]:*:data-[slot='carousel-content']:mask-x-from-85% *:data-[slot='carousel-content']:mask-x-to-105% md:*:data-[slot='carousel-content']:mask-x-to-102%"
 				>
 					<Carousel.Content class="-ml-0.5 sm:-ml-1 h-max">
 						{#each data.topPicks as item, index}
 							<TopPicks {item} {index} />
 						{/each}
 					</Carousel.Content>
-					<Carousel.Previous class="z-100 opacity-20 sm:opacity-40 hover:opacity-85 !bg-transparent border-0 ml-13.5 sm:ml-15" />
-					<Carousel.Next class="z-100 opacity-20 sm:opacity-40 hover:opacity-85 !bg-transparent border-0 mr-13.5 sm:mr-15" />
+					<Carousel.Previous class="z-100 opacity-20 sm:opacity-40 hover:opacity-85 bg-transparent! border-0 ml-13.5 sm:ml-15" />
+					<Carousel.Next class="z-100 opacity-20 sm:opacity-40 hover:opacity-85 bg-transparent! border-0 mr-13.5 sm:mr-15" />
 				</Carousel.Root>
 
 			</div>
