@@ -1,7 +1,5 @@
 <script lang="ts">
 	import { cn } from '$lib/utils';
-	import { isClientSmallScreen } from "$routes/+layout.svelte";
-	let isSmallScreen = $derived(isClientSmallScreen());
 
 	import dayjs from 'dayjs';
 	import utc from 'dayjs/plugin/utc';
@@ -10,8 +8,7 @@
 	dayjs.extend(timezone);
 	import { PUBLIC_TIMEZONE_REGION } from '$env/static/public';
 
-    import type { Icon as IconType } from '@lucide/svelte';
-    import { type validSimpleIconNames, RenderIcon } from '$lib/components/ui/simple-icons/simple-icons.svelte';
+    import { RenderIcon } from '$lib/components/ui/simple-icons/simple-icons.svelte';
 	
 	import { socialLinks } from '$content/about/social-links';
 	import type { SearchResultsItem } from '$src/lib/components/blocks/globalsearch/search-results.svelte';
@@ -24,12 +21,10 @@
 		Clock,
 		MapPin,
         Navigation,
-		X,
     } from '@lucide/svelte/icons';
 	import { onMount } from 'svelte';
 
 
-	// Extract just .items from socialLinks
 	const items : SearchResultsItem[] = socialLinks.flatMap(link => link.items);
 	items.sort((a, b) => a.title.localeCompare(b.title));
 	const toBeRemovedByHref = [
@@ -75,7 +70,7 @@
 
 <main class={cn("relative w-full flex flex-col items-center justify-start gap-4 text-center p-0 rounded-md overflow-clip")}>
 	<div class="h-full">
-		<section class="p-2 lg:p-18 mt-2 mx-auto w-full max-w-[128ch] flex flex-col lg:flex-row items-center justify-start lg:items-start lg:justify-center gap-4 lg:gap-24">
+		<section class="p-4 lg:p-16 lg:pt-12 mt-2 mx-auto w-full max-w-[128ch] flex flex-col lg:flex-row items-center justify-start lg:items-start lg:justify-center gap-4 lg:gap-12 2xl:gap-24">
 			<div class="">
 				<div>
 					<Logo class="mt-2 mx-auto size-22 min-[200]:size-29 min-[380px]:size-32 lg:size-36" />
@@ -108,8 +103,8 @@
 		</section>
 	
 		<section class="mt-4">
-			<h2 class="text-2xl font-semibold mt-6" id="links">Connect with Me</h2>
-			<div class="mt-4 lg:mt-5 mb-6 mx-auto px-3 sm:px-6 py-4 w-full h-full max-w-3xl lg:max-w-4xl grid gap-0 min-[300px]:gap-1 min-[360px]:gap-3 min-[380px]:gap-4 lg:gap-6 grid-cols-2 min-[248px]:grid-cols-3 min-[300px]:grid-cols-4 md:grid-cols-5 lg:grid-cols-5">
+			<h2 class="text-2xl font-semibold mt-12 lg:mt-4" id="links">Connect with Me</h2>
+			<div class="mt-4 lg:mt-5 mb-10 mx-auto px-3 sm:px-6 md:px-10 py-4 w-full h-full max-w-3xl lg:max-w-4xl grid gap-0 min-[300px]:gap-1 min-[360px]:gap-3 min-[380px]:gap-4 lg:gap-6 grid-cols-2 min-[248px]:grid-cols-3 min-[300px]:grid-cols-4 md:grid-cols-5 lg:grid-cols-5">
 				{#each items as item}
 					{#if item.href}
 						<Button
