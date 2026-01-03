@@ -54,7 +54,7 @@
 						{#snippet completeMessage()}
 							<span>CodyNhanPham (v{currentDate})</span>
 							<div class="h-2"></div>
-							<span class="text-muted-foreground hyphens-auto">Type <code class="inline-block pb-0.5 px-2 bg-accent rounded-sm">/resume</code> for the comprehensive résumé, or <code class="inline-block pb-0.5 px-2 bg-accent rounded-sm">/about</code> for additional information.</span>
+							<span class="text-muted-foreground hyphens-auto">Type <code class="inline-block px-2 bg-accent rounded-sm mb-px">/resume</code> for the comprehensive résumé, or <code class="inline-block px-2 bg-accent rounded-sm mb-px">/about</code> for additional information.</span>
 							<br><br>
 						{/snippet}
 					</Terminal.Loading>

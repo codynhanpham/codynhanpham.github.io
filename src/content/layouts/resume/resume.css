@@ -42,7 +42,7 @@
         }
 
         a {
-            @apply text-hyperlink hover:text-hyperlink-active !text-wrap !wrap-anywhere focus-visible:outline-none focus-visible:ring-2 focus-visible:rounded-xs focus-visible:ring-offset-transparent focus-visible:ring-ring !break-all;
+            @apply text-hyperlink hover:text-hyperlink-active text-wrap! wrap-anywhere! focus-visible:outline-none focus-visible:ring-2 focus-visible:rounded-xs focus-visible:ring-offset-transparent focus-visible:ring-ring break-all!;
             box-decoration-break: clone;
             -webkit-box-decoration-break: clone;
 
@@ -74,7 +74,7 @@
         }
 
         p {
-            @apply leading-6 [&:not(:first-child)]:mt-4;
+            @apply leading-6 not-first:mt-4;
         }
         blockquote {
             @apply mt-6 border-l-2 pl-6 italic;
@@ -87,7 +87,7 @@
                     @apply even:bg-muted m-0 border-t p-0;
 
                     th {
-                        @apply border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right;
+                        @apply border px-4 py-2 text-left font-bold [[align=center]]:text-center [[align=right]]:text-right;
                     }
                 }
             }
@@ -96,7 +96,7 @@
                     @apply even:bg-muted m-0 border-t p-0;
                 }
                 td {
-                    @apply border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right;
+                    @apply border px-4 py-2 text-left [[align=center]]:text-center [[align=right]]:text-right;
                 }
             }
         }
@@ -126,10 +126,10 @@
         [data-slot="section-entry"] {
             @apply relative isolate mt-2 md:mt-4;
             [data-slot="section-entry-title"] {
-                @apply !sticky h-fit top-12 sm:top-12.5 bg-background/99 pt-1.5 z-10;
+                @apply sticky! h-fit top-12 sm:top-12.5 bg-background/99 pt-1.5 z-10;
             }
             [data-slot="section-entry-heading"] {
-                @apply !sticky h-fit top-[calc((var(--spacing)*25.875))] sm:top-[calc((var(--spacing)*26.25))] md:top-[calc((var(--spacing)*27.1))] bg-background/98 pt-2 pb-2 border-b z-[9] mt-0;
+                @apply sticky! h-fit top-[calc((var(--spacing)*25.875))] sm:top-[calc((var(--spacing)*26.25))] md:top-[calc((var(--spacing)*27.1))] bg-background/98 pt-2 pb-2 border-b z-9 mt-0;
                 h2, h3 {
                     @apply leading-5 md:leading-7 w-fit;
                 }
@@ -158,7 +158,7 @@
         }
 
         .paper-title {
-            @apply !inline !text-wrap !wrap-anywhere text-highlight;
+            @apply inline! text-wrap! wrap-anywhere! text-highlight;
             &:before {
                 display: none;
             }

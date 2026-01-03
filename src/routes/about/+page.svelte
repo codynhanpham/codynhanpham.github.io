@@ -90,7 +90,7 @@
 				</div>
 			</div>
 	
-			<div class="px-2 min-[380px]:px-6 sm:px-8 md:px-10 lg:px-0 w-full text-left [&>p]:mt-2 [&>p]:w-full">
+			<div class="px-1 min-[380px]:px-4 sm:px-6 md:px-8 lg:px-0 w-full text-left [&>p]:mt-2 [&>p]:w-full">
 				<blockquote class="border-l-4 border-accent pl-4 py-1.5 italic text-base text-primary/90 mb-4">
 					Combining technology and biological sciences to drive research innovation, efficiency, and discovery.
 				</blockquote>
