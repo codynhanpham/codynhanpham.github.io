@@ -36,7 +36,7 @@
 
 <Carousel.Item class="pl-1 sm:pl-2.5 basis-4/5 sm:basis-3/5 sm:-translate-x-1/8 2xl:basis-4/15 2xl:translate-x-0 max-w-74 md:max-w-68 lg:max-w-74 2xl:max-w-86 opacity-35 sm:opacity-50 transition-opacity duration-500 ease-out">
     <div class="h-full p-0">
-        <Card.Root class="flex flex-col items-center justify-start h-full w-full bg-background/20 p-0 border-none shadow-none gap-2">
+        <Card.Root class="flex flex-col items-center justify-start h-full w-full bg-background/20 p-0 border-none shadow-none gap-1.5">
             <Card.Content
                 class="group relative flex shrink w-full items-center justify-center p-0 rounded-lg overflow-hidden opacity-85 aspect-2/3 pointer-events-auto select-none"
             >
@@ -152,16 +152,16 @@
                 </div>
             </Card.Content>
 
-            <Card.Header class="flex h-auto grow w-full flex-col items-center sm:items-start justify-start px-3 mt-1">
+            <Card.Header class="flex h-auto grow w-full flex-col items-center sm:items-start justify-start px-3">
                 {#if typeof item.title === 'string'}
-                    <a href={item.href} target="_blank" title={item.titleAlt || item.title} class="w-full">
+                    <a href={item.href} target="_blank" title={item.titleAlt || item.title} class="w-full ignorespanclip">
                         <span class="text-base text-foreground font-semibold text-center sm:text-left ignorespanclip line-clamp-2">
                             {item.title}
                         </span>
                     </a>
                 {:else}
                     <svelte:boundary>
-                            <a href={item.href} target="_blank">
+                        <a href={item.href} target="_blank" class="ignorespanclip">
                             {@render item.title.snippet(item.title.data)}
                         </a>
                     </svelte:boundary>
