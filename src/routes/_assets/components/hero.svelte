@@ -65,7 +65,7 @@
             {#if item.tags}
                 <div class="flex flex-row justify-start items-center mb-1 lg:mb-1.5 gap-1 mx-auto md:mx-0 w-fit max-w-full overflow-hidden">
                     {#each item.tags as tag}
-                        <Badge variant="outline" class={cn("bg-muted/20 dark:bg-muted/10 backdrop-blur-lg text-foreground/60 text-xs mx-0 !p-0.5 !px-1 pointer-events-auto rounded-sm font-normal text-nowrap whitespace-nowrap", tag.class, (tag.onclick ? "cursor-pointer" : ""))} href={tag.href} onclick={tag.onclick} target={tag.href && isExternalLink(tag.href) ? "_blank" : ""}>
+                        <Badge variant="outline" class={cn("bg-muted/20 dark:bg-muted/10 backdrop-blur-lg text-foreground/60 text-xs mx-0 p-0.5! px-1! pointer-events-auto rounded-sm font-normal text-nowrap whitespace-nowrap", tag.class, (tag.onclick ? "cursor-pointer" : ""))} href={tag.href} onclick={tag.onclick} target={tag.href && isExternalLink(tag.href) ? "_blank" : ""}>
                             {tag.text}
                         </Badge>
                     {/each}
@@ -85,7 +85,7 @@
         <div class="ml-5 self-center md:self-start w-fit h-fit flex justify-center items-center gap-2">
             {#if item.primaryButton && typeof(item.primaryButton) === 'object'}
                 {@const btnContent = item.primaryButton as ButtonContent}
-                <Button class="group !px-4 !py-2.5 w-fit h-fit flex gap-2 select-none opacity-80 hover:opacity-95" href={btnContent.href} onclick={btnContent.onclick} target={btnContent.href && isExternalLink(btnContent.href) ? "_blank" : ""} title={btnContent.alt}>
+                <Button class="group px-4! py-2.5! w-fit h-fit flex gap-2 select-none opacity-80 hover:opacity-95" href={btnContent.href} onclick={btnContent.onclick} target={btnContent.href && isExternalLink(btnContent.href) ? "_blank" : ""} title={btnContent.alt}>
                     {#if btnContent.icon}
                         {#if typeof btnContent.icon.icon === 'string'}
                             {@const iconName = btnContent.icon.icon}
@@ -119,7 +119,7 @@
 
             {#if item.secondaryButton && typeof(item.secondaryButton) === 'object'}
                 {@const btnContent = item.secondaryButton as ButtonContent}
-                <Button variant="outline" class="!p-2.5 bg-secondary/40 w-fit h-fit select-none opacity-80 hover:opacity-95" href={btnContent.href} onclick={btnContent.onclick} target={btnContent.href && isExternalLink(btnContent.href) ? "_blank" : ""} title={btnContent.alt}>
+                <Button variant="outline" class="p-2.5! bg-secondary/40 w-fit h-fit select-none opacity-80 hover:opacity-95" href={btnContent.href} onclick={btnContent.onclick} target={btnContent.href && isExternalLink(btnContent.href) ? "_blank" : ""} title={btnContent.alt}>
                     {#if btnContent.icon}
                         {#if typeof btnContent.icon.icon === 'string'}
                             {@const iconName = btnContent.icon.icon}

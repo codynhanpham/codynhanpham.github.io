@@ -19,7 +19,7 @@ const siteNavOptions = {
     threshold: 0.4,
     minMatchCharLength: 2,
     ignoreLocation: false,
-    keys: [{ name: 'heading', weight: 1.1 } , 'title', { name: 'description', weight: 0.2 }, { name: 'keywords', weight: 0.4 }]
+    keys: [{ name: 'heading', weight: 1.1 } , 'title', 'shortTitle', { name: 'description', weight: 0.2 }, { name: 'keywords', weight: 0.4 }]
 };
 const siteActionOptions = {
     shouldSort: true,
@@ -28,13 +28,13 @@ const siteActionOptions = {
     threshold: 0.35,
     minMatchCharLength: 2,
     ignoreLocation: true,
-    keys: [{ name: 'heading', weight: 1.5 } , 'title', { name: 'description', weight: 0.2 }, { name: 'keywords', weight: 0.3 }]
+    keys: [{ name: 'heading', weight: 1.5 } , 'title', 'shortTitle', { name: 'description', weight: 0.2 }, { name: 'keywords', weight: 0.3 }]
 };
 
 const sitePagesFuse = new Fuse(SRD2FSD(sitePages), siteNavOptions);
 const siteActionsFuse = new Fuse(SRD2FSD(siteActions), siteActionOptions);
 
-export async function search(query: string, n_results: number[] = [6,10]): Promise<{ 
+export async function search(query: string, n_results: number[] = [6,12]): Promise<{ 
     results: SearchResultsData;
     total_matches: number;
 } | undefined> {

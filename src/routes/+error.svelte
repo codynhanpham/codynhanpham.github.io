@@ -19,7 +19,7 @@
 </svelte:head>
 
 
-<main class={cn("w-full flex flex-col items-center justify-start gap-4 text-center p-0 pb-1 rounded-md overflow-clip")}>
+<main class={cn("w-full h-full flex flex-col items-center justify-start gap-4 text-center p-0 pb-1 rounded-md overflow-clip")}>
     <div class="max-w-prose h-full w-full flex flex-col items-center justify-center gap-6 p-4">
         <div class="w-full h-max flex flex-row items-center justify-center gap-4">
             <div class="w-fit h-fit flex flex-row items-center justify-center gap-2">

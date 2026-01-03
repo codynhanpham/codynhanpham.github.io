@@ -34,7 +34,7 @@
 </script>
 
 
-<Carousel.Item class="pl-1 sm:pl-2.5 basis-4/5 sm:basis-3/5 sm:-translate-x-1/8 2xl:basis-4/15 2xl:-translate-x-0 max-w-74 md:max-w-68 lg:max-w-74 2xl:max-w-86 opacity-35 sm:opacity-50 transition-opacity duration-500 ease-out">
+<Carousel.Item class="pl-1 sm:pl-2.5 basis-4/5 sm:basis-3/5 sm:-translate-x-1/8 2xl:basis-4/15 2xl:translate-x-0 max-w-74 md:max-w-68 lg:max-w-74 2xl:max-w-86 opacity-35 sm:opacity-50 transition-opacity duration-500 ease-out">
     <div class="h-full p-0">
         <Card.Root class="flex flex-col items-center justify-start h-full w-full bg-background/20 p-0 border-none shadow-none gap-2">
             <Card.Content
@@ -72,7 +72,7 @@
                     {#if item.tags}
                         <div class="flex flex-row flex-wrap justify-center items-center mt-1 mb-6 lg:mb-8 gap-1 mx-auto md:mx-0 w-fit max-w-full">
                             {#each item.tags as tag}
-                                <Badge variant="outline" class={cn("!bg-muted/20 !dark:bg-muted/15 text-foreground/60 text-xs mx-0 !p-0.5 !px-1 pointer-events-auto rounded-sm font-normal text-nowrap whitespace-nowrap", tag.class, (tag.onclick ? "cursor-pointer" : ""))} href={tag.href} onclick={tag.onclick} target={tag.href && isExternalLink(tag.href) ? "_blank" : ""}>
+                                <Badge variant="outline" class={cn("bg-muted/20! !dark:bg-muted/15 text-foreground/60 text-xs mx-0 p-0.5! px-1! pointer-events-auto rounded-sm font-normal text-nowrap whitespace-nowrap", tag.class, (tag.onclick ? "cursor-pointer" : ""))} href={tag.href} onclick={tag.onclick} target={tag.href && isExternalLink(tag.href) ? "_blank" : ""}>
                                     {tag.text}
                                 </Badge>
                             {/each}
@@ -83,7 +83,7 @@
 
                         {#if typeof item.primaryButton === 'object'}
                             {@const btnContent = item.primaryButton as ButtonContent}
-                            <Button class="group !px-3 !py-2 w-fit h-fit flex gap-2 select-none bg-primary/90 opacity-80 hover:opacity-100 focus-visible:!ring-primary-foreground/80 focus-visible:ring-offset-1 focus-visible:ring-offset-transparent" href={btnContent.href} onclick={btnContent.onclick} target={btnContent.href && isExternalLink(btnContent.href) ? "_blank" : ""} title={btnContent.alt}>
+                            <Button class="group px-3! py-2! w-fit h-fit flex gap-2 select-none bg-primary/90 opacity-80 hover:opacity-100 focus-visible:ring-primary-foreground/80! focus-visible:ring-offset-1 focus-visible:ring-offset-transparent" href={btnContent.href} onclick={btnContent.onclick} target={btnContent.href && isExternalLink(btnContent.href) ? "_blank" : ""} title={btnContent.alt}>
                                 {#if btnContent.icon}
                                     {#if typeof btnContent.icon.icon === 'string'}
                                         {@const iconName = btnContent.icon.icon}
@@ -117,7 +117,7 @@
 
                         {#if typeof item.secondaryButton === 'object'}
                             {@const btnContent = item.secondaryButton as ButtonContent}
-                            <Button variant="outline" class="!p-2 bg-secondary/40 w-fit h-fit select-none opacity-80 hover:opacity-100 focus-visible:!ring-foreground/80" href={btnContent.href} onclick={btnContent.onclick} target={btnContent.href && isExternalLink(btnContent.href) ? "_blank" : ""} title={btnContent.alt}>
+                            <Button variant="outline" class="p-2! bg-secondary/40 w-fit h-fit select-none opacity-80 hover:opacity-100 focus-visible:ring-foreground/80!" href={btnContent.href} onclick={btnContent.onclick} target={btnContent.href && isExternalLink(btnContent.href) ? "_blank" : ""} title={btnContent.alt}>
                                 {#if btnContent.icon}
                                     {#if typeof btnContent.icon.icon === 'string'}
                                         {@const iconName = btnContent.icon.icon}
@@ -152,7 +152,7 @@
                 </div>
             </Card.Content>
 
-            <Card.Header class="flex h-auto grow w-full flex-col items-center sm:items-start justify-start px-3">
+            <Card.Header class="flex h-auto grow w-full flex-col items-center sm:items-start justify-start px-3 mt-1">
                 {#if typeof item.title === 'string'}
                     <a href={item.href} target="_blank" title={item.titleAlt || item.title} class="w-full">
                         <span class="text-base text-foreground font-semibold text-center sm:text-left ignorespanclip line-clamp-2">

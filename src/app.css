@@ -114,6 +114,9 @@
 	html, body {
 		@apply bg-sidebar text-foreground;
 	}
+	button {
+		cursor: pointer;
+	}
 
 	/* https://www.reddit.com/r/webdev/comments/1ihv7iz/removing_the_stupid_space_above_and_below_text/ */
 	/* Add a pseudo ::before element to remove the top space */
@@ -128,15 +131,15 @@
 		display: table;
 		margin-top: -0.30em !important;
 	}
-	.ignorespanclip::before {
+	.ignorespanclip span::before {
 		content: '';
-		display: table;
+		display: none;
 		margin-bottom: 0px !important;
 	}
 	/* Add a pseudo ::after element to remove the bottom space */
-	.ignorespanclip::after {
+	.ignorespanclip span::after {
 		content: '';
-		display: table;
+		display: none;
 		margin-top: 0px !important;
 	}
 

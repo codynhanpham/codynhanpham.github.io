@@ -68,10 +68,11 @@
 
 <svelte:head>
 	<title>Home - Cody Nhan Pham</title>
+	<meta name="description" content="Welcome to Cody Nhan Pham's personal website. Get to know Cody, explore their projects, blog posts, and get in touch!">
 </svelte:head>
 
 
-<main class={cn("relative w-full flex flex-col items-center justify-start gap-4 text-center p-0 pb-1 rounded-md overflow-clip")}>
+<main class={cn("relative w-full h-full flex flex-col items-center justify-start gap-4 text-center p-0 pb-1 rounded-md overflow-clip")}>
 	<div data-home-hero-wrapper class={cn("relative w-full h-screen min-h-240 rounded-md overflow-hidden isolate will-change-transform")}>
 		<div data-home-hero-skeleton class="absolute top-0 left-0 w-full h-full -z-10 bg-accent/50 animation-pulse"></div>
 		<Carousel.Root

@@ -114,7 +114,7 @@
                             disabled={item.disabled}
                             href={item.href}
                             onclick={item.onClick}
-                            class="flex flex-row items-center justify-start font-medium gap-3 px-3 border border-transparent data-selected:border-border"
+                            class="flex flex-row items-center justify-start font-medium gap-3 px-3 py-2.5 border border-transparent data-selected:border-border"
                             aria-label={item.title}
                             onSelect={() => {
                                 if (item.keepStateAfterSelected === true) {
@@ -129,18 +129,20 @@
                         >
                             {#if item.icon}
                                 {#if typeof item.icon === 'string'}
-                                    {@render RenderIcon?.({name: item.icon, style: item.style?.icon, className: "size-4 text-current", fill: "currentColor"})}
+                                    {@render RenderIcon?.({name: item.icon, style: item.style?.icon, className: "size-4.5 text-current", fill: "currentColor"})}
                                 {:else}
-                                    <item.icon class="size-4 text-current" />
+                                    <item.icon class="size-4.5 text-current" />
                                 {/if}
                             {:else}
-                                <Navigation class="size-4 text-current" />
+                                <Navigation class="size-4.5 text-current" />
                             {/if}
                             <div class="flex max-w-full flex-col">
-                                <span class="text-sm text-foreground ignorespanclip" style={item.style?.title}>{item.title}</span>
-                                <span class="pointer-events-none text-xs text-muted-foreground ignorespanclip" style={item.style?.description}>
-                                    {item.description}
-                                </span>
+                                <span class="my-0.5 text-sm text-foreground ignorespanclip" style={item.style?.title}>{item.title}</span>
+                                {#if item.description}
+                                    <span class="mt-2 pointer-events-none text-xs text-muted-foreground ignorespanclip" style={item.style?.description}>
+                                        {item.description}
+                                    </span>
+                                {/if}
                             </div>
                             <div class="flex ml-auto w-fit h-auto gap-1.5">
                                 {#if (item.showScore && item.score) && (getActiveItemValue() !== itemValue || !item.secondaryIcon)}
@@ -162,7 +164,7 @@
                             value={itemValue}
                             disabled={item.disabled}
                             onclick={item.onClick}
-                            class="flex flex-row items-center justify-start font-medium gap-3 px-3 border border-transparent data-selected:border-border"
+                            class="flex flex-row items-center justify-start font-medium gap-3 px-3 py-2.5 border border-transparent data-selected:border-border"
                             aria-label={item.title}
                             onSelect={() => {
                                 if (item.keepStateAfterSelected === true) {
@@ -177,18 +179,20 @@
                         >
                             {#if item.icon}
                                 {#if typeof item.icon === 'string'}
-                                    {@render RenderIcon?.({name: item.icon, style: item.style?.icon, className: "size-4 text-current", fill: "currentColor"})}
+                                    {@render RenderIcon?.({name: item.icon, style: item.style?.icon, className: "size-4.5 text-current", fill: "currentColor"})}
                                 {:else}
-                                    <item.icon class="size-4 text-current" />
+                                    <item.icon class="size-4.5 text-current" />
                                 {/if}
                             {:else}
-                                <Navigation class="size-4 text-current" />
+                                <Navigation class="size-4.5 text-current" />
                             {/if}
                             <div class="flex max-w-full flex-col">
-                                <span class="text-sm text-foreground ignorespanclip" style={item.style?.title}>{item.title}</span>
-                                <span class="pointer-events-none text-xs text-muted-foreground ignorespanclip" style={item.style?.description}>
-                                    {item.description}
-                                </span>
+                                <span class="my-0.5 text-sm text-foreground ignorespanclip" style={item.style?.title}>{item.title}</span>
+                                {#if item.description}
+                                    <span class="mt-2 pointer-events-none text-xs text-muted-foreground ignorespanclip" style={item.style?.description}>
+                                        {item.description}
+                                    </span>
+                                {/if}
                             </div>
                             <div class="flex ml-auto w-fit h-auto gap-1.5">
                                 {#if item.showScore && item.score && (getActiveItemValue() !== itemValue && !item.secondaryIcon)}

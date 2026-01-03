@@ -50,7 +50,7 @@ export const sitePages: SearchResultsData = [
 				title: 'About',
 				description: 'Even more about me',
 				href: '/about',
-				keywords: ['nav:', 'profile', 'me', 'life', 'work', 'personal', 'social media'],
+				keywords: ['nav:', 'profile', 'me', 'life', 'work', 'personal', 'social media', 'man cnp', 'man codynhanpham'],
 				icon: CircleUserRound
 			}
 		]

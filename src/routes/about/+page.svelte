@@ -66,9 +66,10 @@
 
 <svelte:head>
 	<title>About - Cody Nhan Pham</title>
+	<meta name="description" content="Learn more about Cody Nhan Pham, a Microbiology & Biotechnology graduate and self-taught software developer. Discover Cody's background, skills, and passions at the intersection of technology and biological sciences.">
 </svelte:head>
 
-<main class={cn("relative w-full flex flex-col items-center justify-start gap-4 text-center p-0 rounded-md overflow-clip")}>
+<main class={cn("relative w-full h-full flex flex-col items-center justify-start gap-4 text-center p-0 rounded-md overflow-clip")}>
 	<div class="h-full">
 		<section class="p-4 lg:p-16 lg:pt-12 mt-2 mx-auto w-full max-w-[128ch] flex flex-col lg:flex-row items-center justify-start lg:items-start lg:justify-center gap-4 lg:gap-12 2xl:gap-24">
 			<div class="">

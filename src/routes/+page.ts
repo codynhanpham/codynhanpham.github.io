@@ -112,7 +112,7 @@ const hero: HomeHeroData[] = [
             { text: "Slice of Life" },
             { text: "Adventure" },
         ],
-        href: "/works/resume",
+        href: "/works",
         primaryButton: {
             text: "Resume",
             alt: "Resume",
@@ -123,7 +123,7 @@ const hero: HomeHeroData[] = [
                     strokeWidth:"2.25"
                 },
             },
-            href: "/works/resume",
+            href: "/works",
         },
         secondaryButton: {
             alt: "About",

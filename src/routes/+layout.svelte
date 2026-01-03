@@ -331,6 +331,10 @@
     <meta name="author" content="Cody Nhan Pham">
 
 	<title>Cody Nhan Pham</title>
+	<meta name="description" content="Cody Nhan Pham's Personal Website and Portfolio. Get to know Cody, explore their projects, blog posts, and get in touch!">
+	<meta name="keywords" content="Cody Nhan Pham, Cody Pham, Cody N. Pham, CodyNP, Nhan Pham, Portfolio, Personal Website, Software Developer, Biology, Neuroscience, Biotechnology, Projects, Blog, Contact, Resume">
+
+	
 </svelte:head>
 
 
