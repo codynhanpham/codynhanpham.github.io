@@ -240,7 +240,7 @@
 				data-sveltekit-noscroll
 				style={"width: " + verticalNavBarBtnWidth + "px;"}
 				class={cn(
-					"relative h-[calc(100%-0.25rem)] flex flex-col items-center justify-around gap-0 mx-0 px-0 py-1 hover:bg-sidebar-accent dark:hover:bg-sidebar-accent border border-transparent",
+					"relative h-[calc(100%-0.25rem)] ignorespanclip flex flex-col items-center justify-around gap-0 mx-0 px-0 py-1 hover:bg-sidebar-accent dark:hover:bg-sidebar-accent border border-transparent",
 					(isRootPage && navItem.href === '/') || (page.url.pathname.startsWith(navItem.href) && navItem.href !== '/') ? 
 						'bg-primary/85 hover:bg-primary/85 text-primary-foreground hover:text-primary-foreground dark:hover:bg-primary/85 rounded-r-xl rounded-bl-xl rounded-tl-sm' : 'hover:border-border'
 				)}
@@ -284,7 +284,7 @@
 				)} />
 				<span
 					style={"max-width: " + (0.97 * verticalNavBarBtnWidth) + "px;"}
-					class={cn("mx-0.5 text-[0.645rem] font-semibold min-h-fit select-none overflow-clip text-ellipsis ignorespanclip")}
+					class={cn("mx-0.5 text-[0.645rem] font-semibold min-h-fit select-none overflow-clip text-ellipsis")}
 				>
 					{navItem.name}
 				</span>
