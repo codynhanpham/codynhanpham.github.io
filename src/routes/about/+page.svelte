@@ -125,8 +125,8 @@
 							{:else}
 								<Navigation class="size-8! min-[380px]:size-10! text-current" />
 							{/if}
-							<div class="flex max-w-full flex-col">
-								<span class="w-max text-xs min-[380px]:text-sm text-foreground ignorespanclip" style={item.style?.title}>{item.shortTitle ? truncateText(item.shortTitle, 12) : truncateText(item.title, 12)}</span>
+							<div class="flex max-w-full flex-col ignorespanclip">
+								<span class="w-max text-xs min-[380px]:text-sm text-foreground" style={item.style?.title}>{item.shortTitle ? truncateText(item.shortTitle, 12) : truncateText(item.title, 12)}</span>
 							</div>
 						</Button>
 					{/if}
